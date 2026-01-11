@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { 
   Calendar, 
@@ -20,21 +21,23 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#E7EDF3] text-[#333333] overflow-x-hidden">
-      {/* Navbar / Top Bar */}
-      <header className="bg-[#FDECEC] h-16 border-b border-[#D408431a] flex items-center px-6 sticky top-0 z-50">
-        <img 
-          src="logo.png" 
-          alt="Espaço Comvidas Logo" 
-          className="h-10 md:h-12 w-auto object-contain"
-        />
+      {/* Navbar / Logo Area */}
+      <header className="bg-[#FDECEC] py-4 px-6 flex justify-center border-b border-[#D408431a]">
+        <div className="flex items-center gap-2">
+          <div className="w-8 h-8 rounded-full bg-[#D40843] flex items-center justify-center text-white italic font-serif text-lg">C</div>
+          <span className="font-serif text-xl tracking-wide text-[#D40843]">Constelar & Costurar</span>
+        </div>
       </header>
 
       {/* Hero Section */}
       <section className="relative py-20 px-6 overflow-hidden bg-[#FDECEC] fabric-texture">
         <div className="max-w-4xl mx-auto text-center relative z-10">
-          <h1 className="text-4xl md:text-6xl font-bold text-[#D40843] leading-tight mb-10">
-            Descubra como sua ancestralidade molda seu presente e abre caminhos para o futuro.
+          <h1 className="text-4xl md:text-6xl font-bold text-[#D40843] leading-tight mb-6">
+            Costure os retalhos da sua história e descubra a força que existe em sua família.
           </h1>
+          <p className="text-xl md:text-2xl text-[#333333] mb-10 italic">
+            “Se cada pedaço da sua vida fosse um tecido, como seria costurar todos eles em harmonia?”
+          </p>
           <button 
             onClick={scrollToPricing}
             className="bg-[#D40843] hover:bg-[#b00636] text-white px-8 py-4 rounded-full text-lg font-semibold transition-all transform hover:scale-105 shadow-lg flex items-center gap-2 mx-auto group"
@@ -55,6 +58,9 @@ const App: React.FC = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-[#D40843] mb-8">Sobre o Workshop</h2>
+              <p className="text-lg leading-relaxed mb-8">
+                No dia <span className="font-bold">31 de janeiro de 2026</span>, das 9h às 13h30, no <span className="font-bold">Centro Cultural João XXIII</span> em Botafogo, você terá a oportunidade de vivenciar uma experiência transformadora.
+              </p>
               
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
@@ -91,10 +97,10 @@ const App: React.FC = () => {
               <div className="absolute -top-4 -right-4 w-12 h-12 bg-[#D40843] rounded-full flex items-center justify-center text-white shadow-lg z-20">
                 <Users className="w-6 h-6" />
               </div>
-              <div className="aspect-square rounded-2xl overflow-hidden mb-6 border-4 border-[#FDECEC]">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden mb-6">
                 <img 
-                  src="facilitadores.png" 
-                  alt="Isaias e Maria Leonor Araujo" 
+                  src="https://picsum.photos/seed/facilitators/800/600" 
+                  alt="Facilitadores" 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
@@ -114,8 +120,8 @@ const App: React.FC = () => {
       {/* Quilt Metaphor Section */}
       <section className="py-24 px-6 bg-white fabric-texture relative">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-block mb-8">
-            <span className="text-6xl block leading-none">🧵</span>
+          <div className="inline-block p-4 bg-[#FDECEC] rounded-full mb-8">
+            <Sparkles className="text-[#D40843] w-10 h-10" />
           </div>
           <h2 className="text-4xl font-bold text-[#D40843] mb-12">Se a vida fosse comparada a uma colcha de retalhos...</h2>
           
@@ -136,6 +142,19 @@ const App: React.FC = () => {
                 A constelação familiar pode integrar os diversos retalhos de sua história na composição de seus projetos.
               </p>
             </div>
+          </div>
+
+          <div className="mt-16 relative">
+             <div className="relative z-10 p-4 border-2 border-dashed border-[#D4084344] rounded-3xl inline-block bg-white">
+                <img 
+                  src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?auto=format&fit=crop&q=80&w=800" 
+                  alt="Colcha sendo costurada" 
+                  className="rounded-2xl max-w-full md:max-w-2xl h-auto"
+                />
+             </div>
+             {/* Abstract fabric elements */}
+             <div className="absolute top-1/2 left-0 w-24 h-24 bg-[#D4084311] -translate-x-1/2 rounded-full blur-xl"></div>
+             <div className="absolute top-1/2 right-0 w-24 h-24 bg-blue-100 translate-x-1/2 rounded-full blur-xl"></div>
           </div>
         </div>
       </section>
@@ -240,6 +259,13 @@ const App: React.FC = () => {
       {/* Footer / Enclosure */}
       <footer className="py-20 px-6 bg-[#E7EDF3]">
         <div className="max-w-4xl mx-auto text-center">
+          <div className="mb-12 rounded-3xl overflow-hidden shadow-2xl">
+            <img 
+              src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=80&w=1200" 
+              alt="Pessoas sorrindo em círculo" 
+              className="w-full h-[400px] object-cover"
+            />
+          </div>
           <h2 className="text-3xl font-serif text-[#D40843] mb-6 italic">
             “Mais do que um workshop, uma experiência mágica que ficará bordada para sempre na sua memória.”
           </h2>
